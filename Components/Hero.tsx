@@ -22,7 +22,7 @@ const Hero = () => {
            I love turning creative ideas into user-friendly interfaces and thrive on learning and applying cutting-edge technologies to bring them to life. Let&apos;s create something amazing together!
           </p>
           <div className="mt-[2rem] flex-col space-y-6 sm:space-y-0 sm:flex sm:flex-row items-center sm:space-x-6">
-              <button className="px-[2rem] hover:bg-[#FC8700] transition-all duration-200 py-[1rem] text-[18px] font-bold uppercase bg-[#2DDC9A] text-black flex items-center space-x-2" onClick={handleDownload}>
+              <button className="px-[2rem] hover:bg-[#FC8700] transition-all duration-200 py-[1rem] text-[18px] font-bold uppercase bg-[#2DDC9A] text-black flex items-center space-x-2">
         <p>Download CV</p>
         <ArrowDownTrayIcon className="w-[1.6rem] h-[1.7rem] text-black"/>
       </button>
