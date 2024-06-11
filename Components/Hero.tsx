@@ -6,10 +6,7 @@ import { IoInformationCircleOutline } from 'react-icons/io5';
 import { ArrowDownTrayIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const Hero = () => {
-  const handleDownload = () => {
-    const pdfPath = '/CVResume.pdf.'; // Replace this with the actual relative path to your PDF file
-    window.open(pdfPath, '_blank');
-  };
+  
 
   return (
     <div className="h-[88vh] bg-[url('/images/banner.jpg')] mt-[10vh] bg-cover bg-center ">
