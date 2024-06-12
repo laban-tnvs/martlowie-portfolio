@@ -3,6 +3,23 @@ import { ArrowDownTrayIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 
 const About = () => {
+  const handleDownload = () => {
+    const url = '/CVResume.pdf';
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'CVResume.pdf');
+        document.body.appendChild(link);
+        link.click();
+        // Clean up: Remove the dynamically created link
+        link.parentNode && link.parentNode.removeChild(link);
+      })
+      .catch(error => console.error('Error downloading file:', error));
+  };
+  
   return (
     <div className="bg-[#121121] pb-[3rem] pt-[4rem] md:pt-[8rem]">
       <div className="grid grid-cols-1 md:grid-cols-2 w-[80%] mx-auto gap-[3rem] items-center">
@@ -18,7 +35,7 @@ const About = () => {
                       continuous learning and personal growth.
                      Let&apos;s connect and explore how we can achieve great things together!</p>
                 </div>
-                <button className="px-[2rem] hover:bg-[#FC8700] transition-all duratioon-200 py-[1rem] text-[18px] font-bold uppercase bg-[#2DDC9A] text-black flex items-center space-x-2">
+                <button className="px-[2rem] hover:bg-[#FC8700] transition-all duratioon-200 py-[1rem] text-[18px] font-bold uppercase bg-[#2DDC9A] text-black flex items-center space-x-2" onClick={handleDownload}>
                 <p>Download CV</p>
                 <ArrowDownTrayIcon className="w-[1.6rem] h-[1.7rem] text-black"/>
               </button>
